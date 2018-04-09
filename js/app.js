@@ -170,3 +170,22 @@ function moveCounter() {
     }
   }
 }
+
+ // Game timer
+ const second = 0, minute = 0; hour = 0;
+ const timer = document.querySelector('.timer');
+ const interval;
+ function startTimer() {
+  interval = setInterval(function() {
+    timer.innerHTML = minute+'mins '+second+'secs';
+    second++;
+    if(second == 60) {
+      minute++;
+      second = 0;
+    }
+    if (minute == 60) {
+      hourt++;
+      minute = 0;
+    }
+  }, 1000);
+ }
