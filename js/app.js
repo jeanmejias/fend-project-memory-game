@@ -189,3 +189,20 @@ function moveCounter() {
     }
   }, 1000);
  }
+
+ // Congratulations when all cards match, show modal and moves, times and rating
+ function congratulations() {
+  if (matchedCard.length == 16) {
+    clearInterval(interval);
+    finalTime = timer.innerHTML;
+    modal.classList.add('show'); // show congratulations modal
+
+    // declare star rating variable
+    const starRating = document.querySelector('.stars').innerHTML;
+    //showing move, rating, time on modal
+    document.getElementById('finalMove').innerHTML = moves;
+    document.getElementById('starRating').innerHTML = starRating;
+    document.getElementById('totalTime').innerHTML = finalTime;
+    closeModal(); // closeicon on modal
+  };
+ }
