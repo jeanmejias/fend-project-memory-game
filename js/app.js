@@ -75,5 +75,18 @@ for (let i= 0; i <stars.length; i++) {
 }
 
 // reset timer
-
+second = 0;
+minute = 0;
+hour = 0 ;
+const timer = document.querySelector('.timer');
+timer.innerHTML = "0 mins 0 secs";
+clearInterval(interval);
 }
+
+// Toggles Open and Show class to display cards
+
+const displayCard = function() {
+  this.classList.toggle('open');
+  this.classList.toggle('show');
+  this.classList.toggle('disabled');
+};
