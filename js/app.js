@@ -4,40 +4,30 @@ let cards = [...card]
 console.log(cards);
 
 
+// deck of all cards in game
+const deck = document.getElementById('card-deck');
 
+// declaring move variable
+let move = 0;
+let counter = document.querySelector('.moves');
 
-const time = document.querySelector(".time");
-let timer;
-let minutes = document.querySelector(".minutes");
-let seconds = document.querySelector(".seconds");
-const pause = document.querySelector(".pause");
-const play = document.querySelector(".play");
-const restart = document.querySelector(".restart");
-const tableElements = [diamond, diamond, paper-plane-o, paper-plane-o, anchor, anchor, bolt, bolt, cube, cube, leaf, leaf, bicycle, bicycle, bomb, bomb];
+// declare variables for star icons
+const stars = document.querySelectorAll('.fa-star');
 
+// declare variable of matchedCards
+let matchedCards = document.getElementsByClassName('match');
 
-//the play button
-play.onclick = function startTimer() {
-	timer = setInterval(function() {
-		seconds.textContent++;
-		if(seconds.textContent == 60) {
-      seconds.textContent = 0;
-      minutes.textContent++;
-		}
-	}, 1000);
-return timer;
-}
+// stars list
+let starsList = document.querySelectorAll('.stars li');
 
-//the pause button
-pause.onclick = function stopTimer () {
-	clearInterval(timer);
-}
+// close icon in modal
+let closeIcon = document.querySelector('.close');
 
-//restart the game
-restart.onclick = function restartGame() {
-  minutes.textContent = 0;
-  seconds.textContent = 0;
-}
+// declare modal
+let modal = document.getElementById('popup1');
+
+// array for opened cards
+const openedCards = [];
 
 //shuffle array
 function shuffle(array) {
@@ -56,17 +46,3 @@ function shuffle(array) {
     return array;
 }
 
-//flip cards
-card.addEventListener("click", flipCards() {
-       if(card.style.display === "none") {
-  card.style.display = "block";
-} else {
-  card.style.display = "none";
-}
- });
-
-//remove stars one by one
-function removeStars() {
-  document.querySelector(".stars li:first-child()").classList.remove("star-fade");
-	document.querySelector(".stars li:second-child()").classList.remove("star-fade");
-}
