@@ -103,7 +103,8 @@ h1 {
     display: inline-block;
 }
 
-.score-panel .restart {
-    float: right;
+.restart, .play, .pause{
     cursor: pointer;
+    font-size: 30px;
+    color: #00CED1;
 }
