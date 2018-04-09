@@ -29,7 +29,9 @@ let modal = document.getElementById('popup1');
 // array for opened cards
 const openedCards = [];
 
+// description shuffle cards
 //shuffle array
+
 function shuffle(array) {
     var currentIndex = array.length;
     var temporaryValue;
@@ -46,3 +48,32 @@ function shuffle(array) {
     return array;
 }
 
+// description shuffle cards when the page is refreshed / loads
+
+document.body.onload =startGame();
+
+// function to start a new play game
+
+function startGame() {
+  cards = shuffle(cards);
+  for (let i = 0; i < cards.length; i++) {
+
+    deck.innerHTML = '';
+    [].forEach.call(cards, function(item) {
+      deck.appendChild(item);
+    });
+    cards[i].classList.remove('show', 'open', 'match', 'disabled');
+  }
+//  reset moves
+moves = 0;
+counter.innerHTML = moves;
+
+//  reset rating
+for (let i= 0; i <stars.length; i++) {
+  stars[i].style.color = "#FFD700";
+  stars[i].style.visibility = 'visible';
+}
+
+// reset timer
+
+}

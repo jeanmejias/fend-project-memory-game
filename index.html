@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Matching Game</title>
+    <title>Memory Game</title>
     <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Permanent+Marker" >
     <link rel="stylesheet" href="css/app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -23,23 +24,14 @@
                 <li><i class="fa fa-star"></i></li>
             </ul>
 
-            <span class="moves">3</span> Moves
+            <span class="moves">0</span> Moves
 
             <div class="time">
-                <span class="minutes">0</span>:<span class="seconds">0</span>
             </div>
 
-            <button class="play">
-                <i class="fa fa-play"></i>
-            </button>
-
-                  <button class="pause">
-                      <i class="fa fa-pause"></i>
-                  </button>
-
-            <button class="restart">
-                  <i class="fa fa-repeat"></i>
-              </button>
+            <div class="restart" onclick= startGame()>
+                <i class="fa fa-repeat"></i>
+            </div>
         </section>
 
         <ul class="deck">
