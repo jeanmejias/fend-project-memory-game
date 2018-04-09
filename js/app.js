@@ -206,3 +206,24 @@ function moveCounter() {
     closeModal(); // closeicon on modal
   };
  }
+ // Close modal, reset game and event add to card loop
+// close icon on modal
+function closeModal() {
+  closeicon.addEventListener('click', function(e){
+    modal.classList.remove('show');
+    startGame();
+  })
+}
+// For user to paly again
+function playAgain() {
+  modal.classList.remove('show');
+  startGame();
+}
+
+// Loop to add event Listener to each card 
+for (let i = 0; i < cards.length; i++) {
+  card = cards[i];
+  card.addEventListener('click', displayCard);
+  card.addEventListener('click', cardOpen);
+  card.addEventListener('click', congratulations);
+};
