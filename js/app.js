@@ -104,3 +104,26 @@ function cardOpen () {
     }
   }
 };
+
+// when cards match
+ function matched () {
+  openedCards[0].classList.add('match', 'disabled');
+  openedCards[1].classList.add('match', 'disabled');
+  openedCards[0].classList.remove('show', 'open', 'no-event');
+  openedCards[1].classList.remove('show', 'open', 'no-event');
+  openedCards = [];
+ }
+
+ // when cards don't match
+ function unmatched() {
+  openedCards[0].classList.add('unmatched');
+  openedCards[1].classList.add('unmatched');
+  disable();
+  setTimeout(function() {
+    openedCards[0].classList.remove('show', 'open', 'no-event', 'unmatched');
+    openedCards[1].classList.remove('show', 'open', 'no-event', 'unmatched');
+    enable();
+    openedCards = [];
+  }, 1000);
+ }
+ 
