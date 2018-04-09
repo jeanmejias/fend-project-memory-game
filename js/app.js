@@ -15,7 +15,7 @@ let counter = document.querySelector('.moves');
 const stars = document.querySelectorAll('.fa-star');
 
 // declare variable of matchedCards
-let matchedCards = document.getElementsByClassName('match');
+let matchedCard = document.getElementsByClassName('match');
 
 // stars list
 let starsList = document.querySelectorAll('.stars li');
@@ -126,4 +126,22 @@ function cardOpen () {
     openedCards = [];
   }, 1000);
  }
- 
+
+// Disable cards temporarily
+function disable() {
+  array.prototype.filter.call(cards, function(card) {
+    card.classList.add('disabled');
+  });
+}
+
+// enable cards and disable matched cards
+function enable() {
+  Array.prototype.filter.call(cards, function(card) {
+    card.classList.remove('disabled');
+    for (let i = 0; i < matchedCard.length; i++) {
+      matchedCard[i].classList.add('disabled');
+    }
+  });
+}
+
+// Count player's moves
